@@ -52,7 +52,7 @@ def sanitize_str(value: str):
     value = html.escape(value)  # ENCODA CARACTERES DE TAG HTML
     if len(value) > 100:
         return False, "a quantidade de caracteres inseridos ultrapassa o limite de 100"
-    if not bool(re.match("^[A-Za-z0-9./:\s]*$", value)):
+    if not bool(re.match("^[A-Za-z0-9./:]*$", value)):
         return False, "foi inserido um caractere invalido"
 
     return True, value
