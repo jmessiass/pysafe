@@ -7,20 +7,33 @@ Se a resposta for **True** o dado de entrada é seguro, se retornar **False** o 
 ```console
 $ python3 safe_input.py "'PayloadDoBem'"
 (True, 'PayloadDoBem')
+
 $ python3 safe_input.py "'<script>alert(1)</script>'"
 (False, 'foi inserido um caractere invalido')
 ```
 ### Array
 ```console
+$ python3 safe_input.py "['PayloadDoBem']"
+(True, ['PayloadDoBem'])
+
 $ python3 safe_input.py "['<script>alert(1)</script>']"
+(False, ['foi inserido um caractere invalido'])
 ```
 ### Objeto
 ```console
+$ python3 safe_input.py "{'value': 'PayloadDoBem'}"
+(True, {'value': 'PayloadDoBem'})
+
 $ python3 safe_input.py "{'value': '<script>alert(1)</script>'}"
+(False, {'value': 'foi inserido um caractere invalido'})
 ```
 ### Array dentro de objeto
 ```console
+$ python3 safe_input.py "{'value':['PayloadDoBem']}"
+(True, {'value': ['PayloadDoBem']})
+
 $ python3 safe_input.py "{'value':['<script>alert(1)</script>']}"
+(False, {'value': ['foi inserido um caractere invalido']})
 ```
 
 Dentro de payload deverá ser inserido o dado que é digitado pelo usuário.
