@@ -1,5 +1,9 @@
 # Python Safe Input
 
+<p align="center">
+  <img src="pysafe.png" width="350" title="pysafe logo">
+</p>
+
 Esse projeto visa tratar os dados de entrada digitados pelo usuário, com a ideia de não permitir a injeção de comandos maliciosos digitados em campos de formulário.
 ## Exemplos de uso
 Se a resposta for **True** o dado de entrada é seguro, se retornar **False** o dado é inseguro, e é retornado a mensagem de erro.
